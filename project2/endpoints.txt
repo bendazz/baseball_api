@@ -1,0 +1,36 @@
+Project 2 — Player Stats Lookup: Endpoint Design
+==================================================
+
+1. GET /teams?yearID=2000
+-------------------------
+Same as Project 1 — returns team names for a given year. This populates the team selector.
+
+
+2. GET /batting?yearID=2000&teamID=SFN
+--------------------------------------
+Returns the roster/batting stats for a specific team and year. Join batting with
+people so you can return player names (not just IDs). Each record would include
+things like nameFirst, nameLast, G, AB, H, HR, RBI, BB, SO.
+
+
+3. GET /players/{playerID}
+--------------------------
+Returns a single player's bio from the people table (nameFirst, nameLast,
+birthYear, birthCity, birthState, bats, throws, debut, finalGame) plus their
+full career batting stats from batting — one record per year/team. This is what
+powers the detail view when you click a player.
+
+
+Why this design:
+- Endpoint 1 is review from Project 1
+- Endpoint 2 introduces joining two tables (batting + people) and filtering on
+  two parameters
+- Endpoint 3 introduces path parameters and returning a richer response
+  (bio + career history together)
+
+
+Models they'll need to add:
+- Batting — playerID, yearID, teamID, G, AB, H, HR, RBI, BB, SO
+  (and whatever stats you want)
+- People — playerID, nameFirst, nameLast, birthYear, birthCity, birthState,
+  bats, throws, debut, finalGame

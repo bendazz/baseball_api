@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Stats Lookup</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+        <h1>Player Stats Lookup</h1>
+        <div class="controls">
+            <label for="year">Year:</label>
+            <input type="number" id="year" min="1871" max="2024" value="2000">
+            <button id="fetch-btn">Get Teams</button>
+        </div>
+    </header>
+    <div id="results"></div>
+    <script src="/script.js"></script>
+</body>
+</html>
